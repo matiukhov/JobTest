@@ -1,0 +1,73 @@
+<div class="buttons__panel"></div>
+<div class="user__panel">
+    <div class="user__buttons__panel">
+        <span ng-show="!user.userId" class="user__buttons__panel__text">Create new user</span>
+        <span ng-show="user.userId" class="user__buttons__panel__text">{{user.first_name}} {{user.last_name}}</span>
+        <button class="user__buttons__panel__cancel" ng-click="cancel()">X</button>
+    </div>
+    <form name="userForm" ng-submit="create()" novalidate>
+        <div class="form__item" ng-class="{'form__item--error' : userForm.userName.$error['itemRequired']}">
+            <label for="userName">Username*</label>
+            <input type="text" id="userName" name="userName" ng-model="user.username" placeholder="Enter username"
+                check-required>
+            <div ng-messages="userForm.userName.$error">
+                <div ng-message="itemRequired">Username is required.</div>
+            </div>
+        </div>
+        <div class="form__item" ng-class="{'form__item--error' : userForm.firstName.$error['itemRequired']}">
+            <label for="firstName">First Name*</label>
+            <input type="text" id="firstName" name="firstName" ng-model="user.first_name" placeholder="Enter first name"
+                check-required>
+            <div ng-messages="userForm.firstName.$error">
+                <div ng-message="itemRequired">First Name is required.</div>
+            </div>
+        </div>
+        <div class="form__item" ng-class="{'form__item--error' : userForm.lastName.$error['itemRequired']}">
+            <label for="lastName">Last Name*</label>
+            <input type="text" id="lastName" name="lastName" ng-model="user.last_name" check-required
+                placeholder="Enter second name">
+            <div ng-messages="userForm.lastName.$error">
+                <div ng-message="itemRequired">Last Name is required.</div>
+            </div>
+        </div>
+        <div class="form__item form__item__email"
+            ng-class="{'form__item--error' : userForm.email.$error['itemRequired'] || userForm.email.$error['email']}">
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" ng-model="user.email" check-required>
+            <div ng-messages="userForm.email.$error">
+                <div ng-message="itemRequired">Email is required.</div>
+                <div ng-message="email">Invalid email address.</div>
+            </div>
+        </div>
+        <div class="form__item" ng-class="{'form__item--error' : userForm.userType.$error['itemRequired']}">
+            <label for="userType">Type*</label>
+            <select id="userType" name="userType" ng-model="user.user_type" check-required>
+                <option value="">Select type</option>
+                <option value="Admin">Admin</option>
+                <option value="Driver">Driver</option>
+            </select>
+            <div ng-messages="userForm.userType.$error">
+                <div ng-message="itemRequired">Type is required.</div>
+            </div>
+        </div>
+        <div class="form__item"
+            ng-class="{'form__item--error' : userForm.password.$error['itemRequired'] || userForm.password.$error['pattern']}">
+            <label for="password">Password*</label>
+            <input type="password" id="password" name="password" ng-model="user.password" placeholder="Enter password"
+                check-required check-pattern pattern="^(?=.*[A-Za-z])(?=.*\d)[\S]{8,}$">
+            <div ng-messages="userForm.password.$error">
+                <div ng-message="itemRequired">Password is required.</div>
+                <div ng-message="pattern">Password must be at least 8 characters long and contains one number and one
+                    letter</div>
+            </div>
+        </div>
+        <div class="user__buttons__panel_buttom" ng-show="user.userId">
+            <button class="btn btn__red" type="button" ng-disabled="userForm.$invalid"
+                ng-click="delete(user)">Delete</button>
+            <button class="btn btn__blue" type="submit" ng-disabled="userForm.$invalid">Save</button>
+        </div>
+        <div class="user__buttons__panel_buttom" ng-show="!user.userId">
+            <button class="btn btn__blue" type="submit" ng-disabled="userForm.$invalid">Create</button>
+        </div>
+    </form>
+</div>

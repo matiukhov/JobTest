@@ -1,0 +1,19 @@
+.user {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1rem;
+}
+
+.user__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.user__crud {
+    display: block;
+    transition: all 0.3s;
+}
+
+.user__crud--hide {
+    display: none;
+}

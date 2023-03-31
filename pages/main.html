@@ -1,0 +1,6 @@
+<messages set-succes-message="setSuccessMessage(fn)" set-error-message="setErrorMessage(fn)" show-time="5000">
+</messages>
+<div class="user">
+    <div class="user__list" ng-include="'pages/users.html'"></div>
+    <div class="user__crud" ng-class="{'user__crud--hide' : hideUserPanel}" ng-include="'pages/user.html'"></div>
+</div>

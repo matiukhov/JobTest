@@ -1,0 +1,23 @@
+<div class="buttons__panel">
+    <button class="btn btn__blue" ng-click="add()">Create User</button>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="table__header">Username</th>
+            <th class="table__header">First name</th>
+            <th class="table__header">Last name name</th>
+            <th class="table__header">Email</th>
+            <th class="table__header">Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in users track by item.userId" class="table__data" ng-click="edit(item)">
+            <td>{{item.username}}</td>
+            <td>{{item.first_name}}</td>
+            <td>{{item.last_name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.user_type}}</td>
+        </tr>
+    </tbody>
+</table>

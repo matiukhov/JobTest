@@ -1,0 +1,36 @@
+.message {
+    display: flex;
+    justify-content: space-between;
+}
+
+.message__success {
+    height: 20px;
+    width: 250px;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    background: #66bb6a;
+    color: white;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.message__success--show {
+    opacity: 1;
+}
+
+.message__error {
+    height: 20px;
+    width: 250px;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    background: #ef7da0;
+    color: white;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.message__error--show {
+    opacity: 1;
+}

@@ -1,0 +1,66 @@
+.user__buttons__panel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user__buttons__panel_buttom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.user__panel {
+    background: white;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.form__item {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.form__item>input,
+.form__item>select {
+    padding: 1rem;
+    background: #f3f6f9;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.form__item>input[type=email] {
+    padding-left: 2.5rem;
+}
+
+.form__item>div.ng-active {
+    color: #f39db7;
+}
+
+.form__item--error>input,
+.form__item--error>select {
+    border: 1px solid #f39db7;
+}
+
+.form__item__email::before {
+    content: "@";
+    opacity: 0.3;
+    margin-top: 1.7rem;
+    margin-left: 0.6rem;
+    position: absolute;
+    font-size: 18pt;
+}
+
+
+.user__buttons__panel__cancel {
+    border: none;
+    background: none;
+    color: gray;
+    cursor: pointer;
+}
+
+
+.user__buttons__panel__text {
+    font-weight: bold;
+}

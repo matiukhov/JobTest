@@ -1,0 +1,26 @@
+.table {
+    border-spacing: 0px 2px;
+    background: white;
+    border-radius: 5px;
+}
+
+.table__header {
+    color: #b8b8c6;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 1rem;
+}
+
+.table__data {
+    background: #f4f5f8;
+    transition: 'background' 0.3s;
+}
+
+.table__data>td {
+    padding: 1rem;
+}
+
+.table__data:hover {
+    background: #d3d4d6;
+}
+

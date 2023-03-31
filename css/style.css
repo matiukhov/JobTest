@@ -1,0 +1,49 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: #eef0f8;
+    color: #444759;
+    font-family: Calibri;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 3rem;
+}
+
+.buttons__panel {
+    height: 47px;
+    display: flex;
+    justify-content: end;
+    padding-bottom: 1rem;
+}
+
+.btn {
+    width: 120px;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    transition: 'opacity' 0.3s;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn[disabled] {
+    opacity: 0.2;
+    cursor: default;
+}
+
+.btn__blue {
+    color: white;
+    background: #2e8ff0;
+}
+
+.btn__red {
+    color: white;
+    background: #f44682;
+}
